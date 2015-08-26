@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://developer.chrome.com/extensions/examples/tutorials/getstarted/popup.html -->
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Getting Started Extension's Popup</title>
+    <style>
+      body {
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        /* avoid an excessively wide status text */
+        white-space: pre;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 400px;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    <script src="./Getting Started Extension's Popup_files/popup.js"></script><style>[href^="http://www.google.com/aclk?"],
+[href^="https://plus.google.com/share?url="],
+.g-plusone,
+#social-buttons
+{display:none !important;}</style><style>img[src="//ssl.gstatic.com/images/icons/gplus-16.png"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440443050632&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=35295986"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440443102710&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=31914108"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447153607&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=89029119"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447156737&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=22897242"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447162384&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=11451595"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447187749&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=93959829"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447242515&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=35945827"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447314670&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=21964732"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447652909&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=37531002"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447672760&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=36259273"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447726575&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=33829039"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447761004&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=41413753"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447788566&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=19558969"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447800626&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=41210463"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447812725&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=18666813"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447838099&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=80643722"],
+iframe[src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&size=small&annotation=bubble&origin=https%3A%2F%2Fdeveloper.chrome.com&url=http%3A%2F%2Fwww.google.com%2Fchrome&gsrc=3p&ic=1&jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.en.UqHFgrC2x4Y.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAGLTcCN5xsOz-65VWhPIcU4k_x7CFkOOKA#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&id=I0_1440447891207&parent=https%3A%2F%2Fdeveloper.chrome.com&pfname=&rpctoken=38157488"]
+{display:none !important;}</style>
+  </head>
+  <body>
+    <div id="status"></div>
+    <img id="image-result" hidden="">
+  
+
+
+  </body>
+</html>

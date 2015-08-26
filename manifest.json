@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "Quick Links",
+  "description": "This extension allows users to create keyboard shortcuts of their favorite websites from an easy-to-use UI.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_background": "background.html"
+  },
+}
