@@ -11,4 +11,10 @@
     "default_background": "background.html",
     "default_title": "Quick Links"
   },
+  
+  "permissions": {
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/"
+  }
 }
