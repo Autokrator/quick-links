@@ -12,9 +12,9 @@
     "default_title": "Quick Links"
   },
   
-  "permissions": {
+  "permissions": [
     "activeTab",
     "storage",
     "https://ajax.googleapis.com/"
-  }
+  ]
 }
