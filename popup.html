@@ -9,16 +9,20 @@
         font-size: 100%;
       }
     </style>
-    <script>
+    <script type="text/javascript">
 		onSubmit() {
+			// Get text field values.
+			var link = document.getElementById("link").innerText;
+			var shortcut = document.getElementById("shortcut").innerText;
 		
-		
+			// TODO: Create link database and add links to it (using chrome.storage.sync).
+			
 		}
-	</script>
+    </script>
 
   </head>
   <body>
-    <form action="onSubmit()">
+    <form action="javascript:onSubmit()">
 		<label for="link">Link</label>
 		<input type="text" id="link" Placeholder="Put Link Here."><br>
 		<label for="shortcut">Shortcut</label>
