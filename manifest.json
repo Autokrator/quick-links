@@ -6,7 +6,9 @@
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": {
+    "default_icon":"images/icon_16x16.png",
+
+    "icons": {
 		"16": "images/icon_16x16.png",
 		"48": "images/icon_48x48.png",
 		"128": "images/icon_128x128.png"
@@ -15,8 +17,9 @@
     "default_background": "background.html",
     "default_title": "Quick Links"
   },
-  
+
   "permissions": [
+    "tabs",
     "activeTab",
     "storage",
     "https://ajax.googleapis.com/"
