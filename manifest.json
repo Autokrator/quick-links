@@ -7,20 +7,19 @@
   "version": "1.0",
 
   "browser_action": {
-    //displayed icon and tooltip on toolbar
-    "default_icon":"images/icon_128x128.png",
+    //displayed tooltip on toolbar
     "default_title": "Quick Links",
-
-    //icon pack
-    "icons": {
-		"16": "images/icon_16x16.png",
-		"48": "images/icon_48x48.png",
-		"128": "images/icon_128x128.png"
-	},
 
     //html pages utilized by the extension
     "default_popup": "popup.html",
-    "default_background": "background.html",
+    "default_background": "background.html"
+	},
+
+  //icon pack
+  "icons": {
+  "16": "images/icon_16x16.png",
+  "48": "images/icon_48x48.png",
+  "128": "images/icon_128x128.png"
   },
 
   //permissions required for the extension to function
@@ -30,4 +29,6 @@
     "storage",
     "https://ajax.googleapis.com/"
   ]
+
+  
 }
