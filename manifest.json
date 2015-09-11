@@ -1,23 +1,29 @@
 {
   "manifest_version": 2,
 
+  //extension info
   "name": "Quick Links",
   "description": "This extension allows users to create keyboard shortcuts of their favorite websites from an easy-to-use UI.",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon":"images/icon_16x16.png",
+    //displayed icon and tooltip on toolbar
+    "default_icon":"images/icon_128x128.png",
+    "default_title": "Quick Links",
 
+    //icon pack
     "icons": {
 		"16": "images/icon_16x16.png",
 		"48": "images/icon_48x48.png",
 		"128": "images/icon_128x128.png"
 	},
+
+    //html pages utilized by the extension
     "default_popup": "popup.html",
     "default_background": "background.html",
-    "default_title": "Quick Links"
   },
 
+  //permissions required for the extension to function
   "permissions": [
     "tabs",
     "activeTab",
