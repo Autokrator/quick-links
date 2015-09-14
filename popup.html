@@ -8,19 +8,30 @@
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
       }
+	  
+	  #wrapper {
+		width: 350px;
+		margin:0 auto;
+		text-align: center;
+	  }
+	  
+	  input[type=text] {
+		width: 300px;
+	  }
     </style>
   </head>
   <body>
-	<label for="link1">Alt+1</label>
-	<input type="text" id="link1" placeholder="Put Link Here."><br>
-	<label for="link2">Alt+2</label>
-	<input type="text" id="link2" placeholder="Put Link Here."><br>
-	<label for="link3">Alt+3</label>
-	<input type="text" id="link3" placeholder="Put Link Here."><br>
-	<label for="link4">Alt+4</label>
-	<input type="text" id="link4" placeholder="Put Link Here."><br><br>
-	<input type="submit" id="submit" value="Save Changes">
-	
+	<div id="wrapper">
+		<label for="link1">Alt+1</label>
+		<input type="text" id="link1" placeholder="Put Link Here."><br>
+		<label for="link2">Alt+2</label>
+		<input type="text" id="link2" placeholder="Put Link Here."><br>
+		<label for="link3">Alt+3</label>
+		<input type="text" id="link3" placeholder="Put Link Here."><br>
+		<label for="link4">Alt+4</label>
+		<input type="text" id="link4" placeholder="Put Link Here."><br><br>
+		<input type="submit" id="submit" value="Save Changes">
+	</div>
 	<script src="popup.js"></script>
   </body>
 </html>
