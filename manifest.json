@@ -1,19 +1,16 @@
 {
   "manifest_version": 2,
 
-  //extension info
   "name": "Quick Links",
   "description": "This extension allows users to create keyboard shortcuts of
                   their favorite websites from an easy-to-use UI.",
   "version": "1.0",
 
-  //communicates with chrome api to implement logic of each desired shorcut
   "background": {
         "scripts": ["background.js"],
         "persistent": false
     },
 
-  //default commands utilized by the extension
   "commands": {
     "link1": {
       "suggested_key": {
@@ -49,22 +46,18 @@
     },
 
   "browser_action": {
-    //displayed tooltip on toolbar
     "default_title": "Quick Links",
 
-    //html pages utilized by the extension
     "default_popup": "popup.html",
     "default_background": "background.html"
 	},
 
-  //icon pack
   "icons": {
   "16": "images/icon_16x16.png",
   "48": "images/icon_48x48.png",
   "128": "images/icon_128x128.png"
   },
 
-  //permissions required for the extension to function
   "permissions": [
     "tabs",
     "activeTab",
