@@ -1,6 +1,6 @@
 // Checks if URL is valid or not.
 function ValidUrl(str) {
-  var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?'); // fragment locator
+  var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?');
   if(!pattern.test(str)) {
     return false;
   } else {
@@ -33,6 +33,7 @@ function onLoad() {
 			wrapper.style.backgroundColor = "#333333";
 			wrapper.style.color = "#FFFFFF";
 			document.getElementById("icon").src="images/icon_48x48_light.png";
+			document.getElementById("darktheme").value = "Light Theme";
 		}
 	});
 }
@@ -85,10 +86,12 @@ function toggleDarkTheme() {
 			wrapper.style.backgroundColor = "#FFFFFF";
 			wrapper.style.color = "#000000";
 			var icon = document.getElementById("icon").src="images/icon_48x48.png";
+			document.getElementById("darktheme").value = "Dark Theme";
 		} else {
 			wrapper.style.backgroundColor = "#333333";
 			wrapper.style.color = "#FFFFFF";
 			var icon = document.getElementById("icon").src="images/icon_48x48_light.png";
+			document.getElementById("darktheme").value = "Light Theme";
 		}
 		
 		// Save new dark theme settings.

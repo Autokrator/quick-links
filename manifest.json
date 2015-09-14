@@ -15,7 +15,6 @@
     "link1": {
       "suggested_key": {
 				"default": "Alt+1",
-				"windows": "Alt+1",
 				"mac": "Alt+1"
 			},
       "description": "Toggle feature foo"
