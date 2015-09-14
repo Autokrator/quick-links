@@ -3,11 +3,49 @@
 
   //extension info
   "name": "Quick Links",
-  "description": "This extension allows users to create keyboard shortcuts of their favorite websites from an easy-to-use UI.",
+  "description": "This extension allows users to create keyboard shortcuts of
+                  their favorite websites from an easy-to-use UI.",
   "version": "1.0",
 
+  //communicates with chrome api to implement logic of each desired shorcut
   "background": {
-        "scripts": ["background.js"]
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+  //default commands utilized by the extension
+  "commands": {
+    "link1": {
+      "suggested_key": {
+				"default": "Alt+1",
+				"mac": "Alt+1"
+			},
+      "description": "Toggle feature foo"
+    },
+
+      "link2": {
+        "suggested_key": {
+  				"default": "Alt+2",
+  				"mac": "Alt+2"
+  			},
+        "description": "Toggle feature foo"
+      },
+
+      "link3": {
+        "suggested_key": {
+  				"default": "Alt+3",
+  				"mac": "Alt+3"
+  			},
+        "description": "Toggle feature foo"
+      },
+
+      "link4": {
+        "suggested_key": {
+          "default": "Alt+4",
+          "mac": "Alt+4"
+        },
+        "description": "Toggle feature foo"
+      }
     },
 
   "browser_action": {
@@ -32,38 +70,5 @@
     "activeTab",
     "storage",
     "https://ajax.googleapis.com/"
-  ],
-
-  //preset commands *** TESTING REIMPLEMENT BEFORE RELEASE ****
-  "commands": {
-    "link1" : {
-      "suggested_key" : {
-        "default" : "Ctrl+1",
-        "windows" : "Ctrl+1",
-        "mac" : "Command+1",
-        "linux" : "Ctrl+3"
-      },
-      "description": "Whatever you want"
-    },
-
-    "link2" : {
-      "suggested_key" : {
-        "default" : "Ctrl+2",
-        "windows" : "Ctrl+2",
-        "mac" : "Command+2",
-        "linux" : "Ctrl+2"
-      },
-      "description": "Whatever you want"
-    },
-
-      "link3" : {
-        "suggested_key" : {
-          "default" : "Ctrl+3",
-          "windows" : "Ctrl+3",
-          "mac" : "Command+3",
-          "linux" : "Ctrl+3"
-        },
-        "description": "Whatever you want"
-     }
-  }
+  ]
 }
