@@ -1,3 +1,13 @@
+// Checks if URL is valid or not.
+function ValidUrl(str) {
+  var pattern = new RegExp('(http|ftp|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?'); // fragment locator
+  if(!pattern.test(str)) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function onLoad() {
 	// Load link array on chrome.storage.sync API on start.
 	chrome.storage.sync.get(["linkArray"], function(items) {
@@ -23,6 +33,28 @@ function onSubmit() {
 	var link2 = document.getElementById("link2").value;
 	var link3 = document.getElementById("link3").value;
 	var link4 = document.getElementById("link4").value;
+	
+	// Reject save if URLs are not valid.
+	var invalidURL = false;
+	if (!ValidUrl(link1)) {
+		alert("Link 1 has an invalid URL! Please try again.");
+		invalidURL = true;
+	}
+	if (!ValidUrl(link2)) {
+		alert("Link 2 has an invalid URL! Please try again.");
+		invalidURL = true;
+	}
+	if (!ValidUrl(link3)) {
+		alert("Link 3 has an invalid URL! Please try again.");
+		invalidURL = true;
+	}
+	if (!ValidUrl(link4)) {
+		alert("Link 4 has an invalid URL! Please try again.");
+		invalidURL = true;
+	}
+	if (invalidURL)
+		return;
+	
 	var linkArray = [link1, link2, link3, link4];
 	
 	// Store link array in chrome storage API.
