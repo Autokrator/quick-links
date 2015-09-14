@@ -49,15 +49,15 @@ function onSubmit() {
 		alert("Link 1 has an invalid URL! Please try again.");
 		invalidURL = true;
 	}
-	if ((!ValidUrl(link2))&&(link1)) {
+	if ((!ValidUrl(link2))&&(link2)) {
 		alert("Link 2 has an invalid URL! Please try again.");
 		invalidURL = true;
 	}
-	if ((!ValidUrl(link3))&&(link1)) {
+	if ((!ValidUrl(link3))&&(link3)) {
 		alert("Link 3 has an invalid URL! Please try again.");
 		invalidURL = true;
 	}
-	if ((!ValidUrl(link4))&&(link1)) {
+	if ((!ValidUrl(link4))&&(link4)) {
 		alert("Link 4 has an invalid URL! Please try again.");
 		invalidURL = true;
 	}
