@@ -1,14 +1,23 @@
 chrome.commands.onCommand.addListener(function(command) {
-        if(command == "link1"){
-          alert("link1 pressed");
-        }
-        else if(command == "link2"){
-          alert("link2 pressed");
-        }
-        else if(command == "link3"){
-          alert("link3 pressed");
-        }
-        else if(command == "link4"){
-          alert("link4 pressed");
-        }
-      });
+  //Checks to verify the pressed command
+  switch(command){
+    case "link1": //command for link1 registered
+      chrome.tabs.create({url: "http://www.youtube.com"});
+      break;
+
+    case "link2": //command for link2 registered
+    chrome.tabs.create({url: "http://www.google.com"});
+      break;
+
+    case "link3": //command for link3 registered
+      chrome.tabs.create({url: "http://www.gmail.com"});
+      break;
+
+    case "link4": //command for link4 registered
+      chrome.tabs.create({url: "http://www.facebook.com"});
+      break;
+
+    default:
+      break; //do nothing
+  }
+});
