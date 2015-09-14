@@ -1,31 +1,35 @@
-chrome.commands.onCommand.addListener(function(command) {
-  //Checks to verify the pressed command
-  switch(command){
-    case "link1": //command for link1 registered
+chrome.commands.onCommand.addListener(function(command) {	
+	//Checks to verify the pressed command
+	switch(command){
+	case "link1": //command for link1 registered
 		chrome.storage.sync.get(["linkArray"], function(items) {
-			chrome.tabs.create({url: items.linkArray[0]});
+			if (items.linkArray[0])
+				chrome.tabs.create({url: items.linkArray[0]});
 		});
-      break;
+	  break;
 
-    case "link2": //command for link2 registered
+	case "link2": //command for link2 registered
 		chrome.storage.sync.get(["linkArray"], function(items) {
-			chrome.tabs.create({url: items.linkArray[1]});
+			if (items.linkArray[1])
+				chrome.tabs.create({url: items.linkArray[1]});
 		});
-      break;
+	  break;
 
-    case "link3": //command for link3 registered
-      chrome.storage.sync.get(["linkArray"], function(items) {
-			chrome.tabs.create({url: items.linkArray[2]});
+	case "link3": //command for link3 registered
+	  chrome.storage.sync.get(["linkArray"], function(items) {
+			if (items.linkArray[2])
+				chrome.tabs.create({url: items.linkArray[2]});
 		});
-      break;
+	  break;
 
-    case "link4": //command for link4 registered
-      chrome.storage.sync.get(["linkArray"], function(items) {
-			chrome.tabs.create({url: items.linkArray[3]});
+	case "link4": //command for link4 registered
+	  chrome.storage.sync.get(["linkArray"], function(items) {
+			if (items.linkArray[3])
+				chrome.tabs.create({url: items.linkArray[3]});
 		});
-      break;
+	  break;
 
-    default:
-      break; //do nothing
-  }
+	default:
+	  break; //do nothing
+	}
 });
