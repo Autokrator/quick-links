@@ -104,13 +104,11 @@ function toggleDarkTheme() {
 			document.body.style.backgroundColor = "#FFFFFF";
 			wrapper.style.color = "#000000";
 			var icon = document.getElementById("icon").src="images/icon_48x48.png";
-			document.getElementById("darktheme").value = "Dark Theme";
 		} else {
 			wrapper.style.backgroundColor = "#333333";
 			document.body.style.backgroundColor = "#333333";
 			wrapper.style.color = "#FFFFFF";
 			var icon = document.getElementById("icon").src="images/icon_48x48_light.png";
-			document.getElementById("darktheme").value = "Light Theme";
 		}
 		
 		// Save new dark theme settings.
@@ -158,7 +156,6 @@ window.onload = onLoad;
 
 // Save links.
 document.getElementById("submit").onclick = onSubmit;
-document.getElementById("darktheme").onclick = toggleDarkTheme;
 
 // Clicking status opens up 'Keyboard shortcuts' in extensions menu.
 document.getElementById("shortcut1").onclick = onStatusClick;
@@ -177,3 +174,6 @@ document.getElementById("shortcut1").onmouseout = onMouseOut;
 document.getElementById("shortcut2").onmouseout = onMouseOut;
 document.getElementById("shortcut3").onmouseout = onMouseOut;
 document.getElementById("shortcut4").onmouseout = onMouseOut;
+
+// Clicking icon toggles dark theme
+document.getElementById("icon").onclick = toggleDarkTheme;
