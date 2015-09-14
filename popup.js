@@ -25,6 +25,15 @@ function onLoad() {
 	chrome.storage.sync.get(["linkArray"], function(items) {
 		document.getElementById("link4").value = items.linkArray[3];
 	});
+	
+	// Load dark theme if darkTheme = true.
+	chrome.storage.sync.get(["darkTheme"], function(items) {
+		if(items.darkTheme) {
+			var wrapper = document.getElementById("wrapper");
+			wrapper.style.backgroundColor = "#333333";
+			wrapper.style.color = "#FFFFFF";
+		}
+	});
 }
 
 function onSubmit() {
@@ -64,8 +73,32 @@ function onSubmit() {
 	});
 }
 
+function toggleDarkTheme() {
+	// Change GUI theme.
+	chrome.storage.sync.get(["darkTheme"], function(items) {
+		// Grab wrapper from HTML.
+		var wrapper = document.getElementById("wrapper");
+		
+		// Toggle GUI colors.
+		if(items.darkTheme) {
+			wrapper.style.backgroundColor = "#FFFFFF";
+			wrapper.style.color = "#000000";
+		} else {
+			wrapper.style.backgroundColor = "#333333";
+			wrapper.style.color = "#FFFFFF";
+		}
+		
+		// Save new dark theme settings.
+		chrome.storage.sync.set({"darkTheme": !items.darkTheme}, function() {
+			// Notify that we saved.
+			message('Settings saved');
+		});
+	});
+}
+
 // Load links.
 window.onload = onLoad;
 
 // Save links.
 document.getElementById("submit").onclick = onSubmit;
+document.getElementById("darktheme").onclick = toggleDarkTheme;
