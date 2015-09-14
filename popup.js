@@ -26,6 +26,22 @@ function onLoad() {
 		document.getElementById("link4").value = items.linkArray[3];
 	});
 	
+	// Get all commands, and set texts on divs.
+    chrome.commands.getAll(function (commandsArray) {
+        for(var i = 1; i < commandsArray.length; i++){
+			
+            var statusShortcut = document.getElementById("shortcut" + i);
+		
+            if (commandsArray[i].shortcut == "") {
+				statusShortcut.innerText = "Not Set";
+                statusShortcut.style.backgroundColor = "red";
+            } else {
+				statusShortcut.innerText = commandsArray[i].shortcut;
+                statusShortcut.style.backgroundColor = "#43A047";
+			}
+        }
+    });
+	
 	// Load dark theme if darkTheme = true.
 	chrome.storage.sync.get(["darkTheme"], function(items) {
 		if(items.darkTheme) {
