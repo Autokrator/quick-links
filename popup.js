@@ -1,5 +1,9 @@
 function onSubmit() {
-	
+	// Store link array in chrome storage API.
+	chrome.storage.sync.set({'linkArray': linkArray}, function() {
+		// Notify that we saved.
+		message('Settings saved');
+	});
 }
 
 // Save link values.
