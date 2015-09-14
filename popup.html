@@ -41,6 +41,10 @@
 	  .status.green:hover {
 		background-color:#388E3C;
 	  }
+	  
+	  label {
+		font-weight: bold;
+	  }
     </style>
   </head>
   <body>
@@ -55,10 +59,9 @@
 		<label for="link4">Shortcut 4 <span class="status green" id="shortcut4"></span></label>
 		<input type="text" id="link4" placeholder="Insert Link..."><br><br>
 	</div>
-		<input type="submit" id="submit" value="Save Changes">
-		<input type="submit" id="darktheme" value="Dark Theme">
+	<input type="submit" id="submit" value="Save Changes">
+	<input type="submit" id="darktheme" value="Dark Theme">
 		
-		<p>Note: To override shortcuts, go into extensions menu, scroll down to the bottom, and click "Keyboard shortcuts".</p>
 	<script src="popup.js"></script>
   </body>
 </html>
