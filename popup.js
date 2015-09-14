@@ -37,7 +37,7 @@ function onLoad() {
                 statusShortcut.style.backgroundColor = "red";
             } else {
 				statusShortcut.innerText = commandsArray[i].shortcut;
-                statusShortcut.style.backgroundColor = "#43A047";
+                statusShortcut.style.backgroundColor = "#00E676";
 			}
         }
     });
@@ -125,6 +125,34 @@ function onStatusClick() {
 	chrome.tabs.create({url: "chrome://extensions/configureCommands"});
 }
 
+function onMouseHover() {	
+	var statusElement = this;
+	var current = parseInt(this.id.slice(-1));
+	// Check statuses if shortcuts are set, and change colors accordingly on hover.
+	chrome.commands.getAll(function (commandsArray) {
+		
+		if (commandsArray[current].shortcut == "") {
+			statusElement.style.backgroundColor = "#C62828";
+		} else {
+			statusElement.style.backgroundColor = "#00C853";
+		}
+    });
+}
+
+function onMouseOut() {
+	var statusElement = this;
+	var current = parseInt(this.id.slice(-1));
+	// Check statuses if shortcuts are set, and change colors accordingly on hover.
+	chrome.commands.getAll(function (commandsArray) {
+		
+		if (commandsArray[current].shortcut == "") {
+			statusElement.style.backgroundColor = "red";
+		} else {
+			statusElement.style.backgroundColor = "#00E676";
+		}
+    });
+}
+
 // Load links.
 window.onload = onLoad;
 
@@ -137,3 +165,15 @@ document.getElementById("shortcut1").onclick = onStatusClick;
 document.getElementById("shortcut2").onclick = onStatusClick;
 document.getElementById("shortcut3").onclick = onStatusClick;
 document.getElementById("shortcut4").onclick = onStatusClick;
+
+// On mouse hover, make background color darker.
+document.getElementById("shortcut1").onmouseover = onMouseHover;
+document.getElementById("shortcut2").onmouseover = onMouseHover;
+document.getElementById("shortcut3").onmouseover = onMouseHover;
+document.getElementById("shortcut4").onmouseover = onMouseHover;
+
+// On mouse out, make background color lighter.
+document.getElementById("shortcut1").onmouseout = onMouseOut;
+document.getElementById("shortcut2").onmouseout = onMouseOut;
+document.getElementById("shortcut3").onmouseout = onMouseOut;
+document.getElementById("shortcut4").onmouseout = onMouseOut;
