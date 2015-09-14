@@ -1,6 +1,6 @@
 // Checks if URL is valid or not.
 function ValidUrl(str) {
-  var pattern = new RegExp('(http|ftp|https)://[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:/~+#-]*[\w@?^=%&amp;/~+#-])?'); // fragment locator
+  var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?'); // fragment locator
   if(!pattern.test(str)) {
     return false;
   } else {
