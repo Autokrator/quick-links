@@ -4,7 +4,7 @@
   "name": "Quick Links",
   "description": "This extension allows users to create keyboard shortcuts of
                   their favorite websites from an easy-to-use UI.",
-  "version": "1.0",
+  "version": "1.1",
 
   "background": {
         "scripts": ["background.js"],
@@ -15,6 +15,7 @@
     "link1": {
       "suggested_key": {
 				"default": "Alt+1",
+				"windows": "Alt+1",
 				"mac": "Alt+1"
 			},
       "description": "Toggle feature foo"
