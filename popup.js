@@ -121,9 +121,19 @@ function toggleDarkTheme() {
 	});
 }
 
+function onStatusClick() {
+	chrome.tabs.create({url: "chrome://extensions/configureCommands"});
+}
+
 // Load links.
 window.onload = onLoad;
 
 // Save links.
 document.getElementById("submit").onclick = onSubmit;
 document.getElementById("darktheme").onclick = toggleDarkTheme;
+
+// Clicking status opens up 'Keyboard shortcuts' in extensions menu.
+document.getElementById("shortcut1").onclick = onStatusClick;
+document.getElementById("shortcut2").onclick = onStatusClick;
+document.getElementById("shortcut3").onclick = onStatusClick;
+document.getElementById("shortcut4").onclick = onStatusClick;
