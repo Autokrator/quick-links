@@ -31,6 +31,7 @@ function onLoad() {
 		if(items.darkTheme) {
 			var wrapper = document.getElementById("wrapper");
 			wrapper.style.backgroundColor = "#333333";
+			document.body.style.backgroundColor = "#333333";
 			wrapper.style.color = "#FFFFFF";
 			document.getElementById("icon").src="images/icon_48x48_light.png";
 			document.getElementById("darktheme").value = "Light Theme";
@@ -84,11 +85,13 @@ function toggleDarkTheme() {
 		// Toggle GUI colors.
 		if(items.darkTheme) {
 			wrapper.style.backgroundColor = "#FFFFFF";
+			document.body.style.backgroundColor = "#FFFFFF";
 			wrapper.style.color = "#000000";
 			var icon = document.getElementById("icon").src="images/icon_48x48.png";
 			document.getElementById("darktheme").value = "Dark Theme";
 		} else {
 			wrapper.style.backgroundColor = "#333333";
+			document.body.style.backgroundColor = "#333333";
 			wrapper.style.color = "#FFFFFF";
 			var icon = document.getElementById("icon").src="images/icon_48x48_light.png";
 			document.getElementById("darktheme").value = "Light Theme";
