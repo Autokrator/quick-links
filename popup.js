@@ -1,21 +1,12 @@
 // Checks if URL is valid or not.
 function ValidUrl(str) {
     // Check if URL is valid.
-    if(str.split(".").length == 2) //case ex: google.com
-        return true;
-    else if(str.split(".").length == 3){ //case ex: https://www.goggle.com | www.google.com
-        var ary = str.split(".");
-        if(ary[0].indexOf("www") != 0){ //check for proper "www" sequence
-            if(ary[0].indexOf("https://www") == 0 || ary[0].indexOf("http://www") == 0) //check http cases
-                return true
-            else
-                return false;
-        }
-        else
-            return true;
-    }
-    else
-        return false;
+	var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?');
+	if(!pattern.test(str)) {
+		return false;
+	} else {
+		return true;
+	}
 }
 
 function onLoad() {
