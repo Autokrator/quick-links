@@ -4,49 +4,49 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Quick Links</title>
     <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
+	body {
+		font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+		font-size: 100%;
 		background-color: #F5F5F5;
-      }
-	  
-	  #wrapper {
+	}
+  
+	#wrapper {
 		width: 350px;
 		margin:0 auto;
 		text-align: center;
 		line-height: 170%;
 		background-color: #F5F5F5;
-	  }
-	  
-	  input[type=text] {
+	}
+  
+	input[type=text] {
 		width: 300px;
 		height: 25px;
 		padding-left:5px;
-	  }
-	  
-	  #submit {
+	}
+  
+	#submit {
 		display:inline-block;
 		border-radius:5px;
 		width:150px;
-        height: 50px;
+		height: 50px;
 		margin-top:26px;
 		margin-bottom:19px;
 		color:#FFFFFF;
 		cursor:pointer;
 		cursor:hand;
-        text-align: center;
+		text-align: center;
 		background-color: #BABABA;
 		font-weight:bold;
 		font-size:20px;
 		vertical-align:middle;
 		padding-top:15px;
-	  }
-	  
-	  #submit:hover {
+	}
+  
+	#submit:hover {
 		background-color:#8A8A8A;
-	  }
-	  
-	  .status {
+	}
+  
+	.status {
 		display: inline-block;
 		border-radius:5px;
 		width:100px;
@@ -57,19 +57,54 @@
 		color:#FFFFFF;
 		cursor:pointer;
 		cursor:hand;
-	  }
-        
-      #icon:hover {
-        cursor:pointer;
+	}
+
+	#icon:hover {
+		cursor:pointer;
 		cursor:hand;
-      }
-	  
-	  label {
+	}
+  
+	label {
 		font-weight: bold;
+	}
+	
+	#overlay {
+		opacity:1;
+	}
+	
+	@keyframes fadeIn {
+	  to {
+		opacity: 1;
 	  }
+	}
+	
+	@keyframes fadeOut{
+		0% {opacity: 1;}
+		100% {opacity: 0;}
+	}
+	
+	#notification {
+		display:none;
+		position:absolute;
+		left:28%;
+		top:43%;
+		border-radius:5px;
+		width:170px;
+		height: 50px;
+		text-align: center;
+		color:#FFFFFF;
+		background-color: #4D4D4D;
+		font-weight:bold;
+		font-size:20px;
+		padding-top:15px;
+		opacity: 0;
+		animation: fadeIn 5s;
+		animation: fadeOut 2s;
+	}
     </style>
   </head>
   <body>
+	<div id="notification">Changes Saved</div>
 	<div id="wrapper">
 		<img id="icon" src="images/icon_48x48.png"></img><br>
 		<label for="link1">Shortcut 1 <span class="status blue" id="shortcut1"></span></label>

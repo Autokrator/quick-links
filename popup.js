@@ -90,6 +90,9 @@ function onSubmit() {
 		// Notify that we saved.
 		message('Settings saved');
 	});
+	
+	document.getElementById("notification").style.display = "none";
+	document.getElementById("notification").style.display = "block";
 }
 
 function toggleDarkTheme() {
