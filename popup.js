@@ -3,7 +3,7 @@ function ValidUrl(str) {
     // Check if URL is valid.
     if(str.split(".").length == 2) //case ex: google.com
         return true;
-    else if(str.split(".").length == 3){ //case ex: https://www.goggle.com | www.google.com
+    else if(str.split(".").length >= 3){ //case ex: https://www.goggle.com | www.google.com
         var ary = str.split(".");
         if(ary[0].indexOf("www") != 0){ //check for proper "www" sequence
             if(ary[0].indexOf("https://www") == 0 || ary[0].indexOf("http://www") == 0) //check http cases
