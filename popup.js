@@ -1,6 +1,7 @@
 // Checks if URL is valid or not.
 function ValidUrl(str) {
     // Check if URL is valid.
+<<<<<<< HEAD
     if(str.split(".").length == 2) //case ex: google.com
         return true;
     else if(str.split(".").length >= 3){ //case ex: https://www.goggle.com | www.google.com
@@ -16,6 +17,14 @@ function ValidUrl(str) {
     }
     else
         return false;
+=======
+	var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?');
+	if(!pattern.test(str)) {
+		return false;
+	} else {
+		return true;
+	}
+>>>>>>> 2ae1eb8c23fa6722b7a48e4d2bac773aa6322f11
 }
 
 function onLoad() {
@@ -71,7 +80,7 @@ function onSubmit() {
         }
     }
     if (invalidURL)
-    return;
+		return;
 
     //update the link array
     var linkArray = [document.getElementById("link1").value,
@@ -84,6 +93,9 @@ function onSubmit() {
         document.getElementById("notification").style.display = "none";
         document.getElementById("notification").style.display = "block";
     });
+	
+	// On click, keep save changes green.
+	document.getElementById("submit").className = "saved";
 }
 
 function toggleDarkTheme() {
@@ -155,6 +167,10 @@ function onInputFocus(){
     this.className = "input";
 }
 
+function onType() {
+	document.getElementById("submit").className = "unsaved";
+}
+
 // Load links.
 window.onload = onLoad;
 
@@ -187,3 +203,9 @@ document.getElementById("link1").onfocus = onInputFocus;
 document.getElementById("link2").onfocus = onInputFocus;
 document.getElementById("link3").onfocus = onInputFocus;
 document.getElementById("link4").onfocus = onInputFocus;
+
+// Change save button color when user types in field.
+document.getElementById("link1").onkeypress = onType;
+document.getElementById("link2").onkeypress = onType;
+document.getElementById("link3").onkeypress = onType;
+document.getElementById("link4").onkeypress = onType;
