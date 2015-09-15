@@ -76,10 +76,13 @@ function onSubmit() {
 
     // Store link array in chrome storage API.
     chrome.storage.sync.set({"linkArray": linkArray}, function(){
-        document.getElementById("notification").style.display = "none";
-        document.getElementById("notification").style.display = "block";
+        //removes the old notification bar and sets a new one
+        var current = document.getElementById("notification");
+        var newone = current.cloneNode(true); //copy current to new
+        current.parentNode.replaceChild(newone, current); //replace current
+        newone.style.display = "block"; //activate animation of new
     });
-	
+
 	// On click, keep save changes green.
 	document.getElementById("submit").className = "saved";
 }
