@@ -59,15 +59,12 @@
 		cursor:pointer;
 		cursor:hand;
 		text-align: center;
-<<<<<<< HEAD
 		background-color: #007FFF;
-=======
->>>>>>> 2ae1eb8c23fa6722b7a48e4d2bac773aa6322f11
 		font-weight:bold;
 		font-size:20px;
 		vertical-align:middle;
 		padding-top:15px;
-        /*box-shadow: 2px 2px 2px #888888;*/
+        box-shadow: 2px 2px 2px #888888;
 	}
 
     #submit:active{
@@ -76,13 +73,10 @@
         box-shadow:         inset 0 0 5px #888888;
     }
 
-<<<<<<< HEAD
 	#submit:hover {
 		background-color:#236B8E;
 	}
 
-=======
->>>>>>> 2ae1eb8c23fa6722b7a48e4d2bac773aa6322f11
 	.status {
 		display: inline-block;
 		border-radius:5px;
@@ -144,19 +138,11 @@
         margin: 0;
     }
     #cf:hover { background-color: rgba(84, 84, 84, 0.3); }
-	
-	.saved {
-		background-color:#32CD99;
-	}
-	
-	.unsaved {
-		background-color: #BABABA;
-	}
-	
-	.unsaved:hover {
-		background-color:#32CD99;
-	}
-	
+
+    .lightcolor {
+        color:#FFFFFF;
+    }
+
     </style>
   </head>
   <body>
@@ -171,7 +157,7 @@
 		<input type="text" class="input" id="link3" placeholder="Insert Link..."><br>
 		<label for="link4">Shortcut 4 <span class="status" id="shortcut4"></span></label>
 		<input type="text" class="input" id="link4" placeholder="Insert Link..."><br>
-		<div id="submit" class="unsaved">Save Changes</div>
+		<div id="submit">Save Changes</div>
 	</div>
 	<script src="popup.js"></script>
   </body>
