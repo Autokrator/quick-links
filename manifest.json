@@ -17,7 +17,7 @@
 				"default": "Alt+1",
 				"mac": "Alt+1"
 			},
-      "description": "Toggle feature foo"
+      "description": "Hotkey 1 (opens link 1 in new tab)"
     },
 
       "link2": {
@@ -25,7 +25,7 @@
   				"default": "Alt+2",
   				"mac": "Alt+2"
   			},
-        "description": "Toggle feature foo"
+        "description": "Hotkey 2 (opens link 2 in new tab)"
       },
 
       "link3": {
@@ -33,7 +33,7 @@
   				"default": "Alt+3",
   				"mac": "Alt+3"
   			},
-        "description": "Toggle feature foo"
+        "description": "Hotkey 3 (opens link 3 in new tab)"
       },
 
       "link4": {
@@ -41,7 +41,7 @@
           "default": "Alt+4",
           "mac": "Alt+4"
         },
-        "description": "Toggle feature foo"
+        "description": "Hotkey 4 (opens link 4 in new tab)"
       }
     },
 
