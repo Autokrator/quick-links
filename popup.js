@@ -1,21 +1,21 @@
 // Checks if URL is valid or not.
 function ValidUrl(str) {
     // Check if URL is valid.
-	if (!/^https?:\/\//i.test(str)) {
-		str = 'http://' + str;
-	}
+    if (!/^https?:\/\//i.test(str)) {
+        str = 'http://' + str;
+    }
 
-	var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?');
-	if(!pattern.test(str)) {
-		return false;
-	} else {
-		return true;
-	}
+    var pattern = new RegExp('(http|ftp|https)://[\\w-]+(\\.[\\w-]+)+([\\w-.,@?^=%&:/~+#-]*[\\w@?^=%&;/~+#-])?');
+    if (!pattern.test(str)) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function onLoad() {
     // Load link array on chrome.storage.sync API on start.
-    chrome.storage.sync.get(["linkArray"], function(items) {
+    chrome.storage.sync.get(["linkArray"], function (items) {
         document.getElementById("link1").value = items.linkArray[0];
         document.getElementById("link2").value = items.linkArray[1];
         document.getElementById("link3").value = items.linkArray[2];
@@ -24,7 +24,7 @@ function onLoad() {
 
     // Get all commands, and set texts on divs.
     chrome.commands.getAll(function (commandsArray) {
-        for(var i = 1; i < commandsArray.length; i++){
+        for (var i = 1; i < commandsArray.length; i++) {
 
             var statusShortcut = document.getElementById("shortcut" + i);
 
@@ -39,14 +39,14 @@ function onLoad() {
     });
 
     // Load dark theme if darkTheme = true.
-    chrome.storage.sync.get(["darkTheme"], function(items) {
-        if(items.darkTheme) {
+    chrome.storage.sync.get(["darkTheme"], function (items) {
+        if (items.darkTheme) {
             var wrapper = document.getElementById("wrapper");
             wrapper.style.backgroundColor = "#333333";
             document.body.style.backgroundColor = "#333333";
             document.body.style.color = "#FFFFFF";
             wrapper.style.color = "#FFFFFF";
-            document.getElementById("icon").src="images/icon_48x48_light.png";
+            document.getElementById("icon").src = "images/icon_48x48_light.png";
             document.getElementById("link1").style.color = "#FFFFFF";
             document.getElementById("link2").style.color = "#FFFFFF";
             document.getElementById("link3").style.color = "#FFFFFF";
@@ -58,15 +58,14 @@ function onLoad() {
 function onSubmit() {
     // Reject save if URLs are not valid.
     var invalidURL = false;
-    for(i = 1; i < 5; i++){
-        if((!ValidUrl(document.getElementById("link" + i).value))
-                    &&(document.getElementById("link" + i).value)){
+    for (i = 1; i < 5; i++) {
+        if ((!ValidUrl(document.getElementById("link" + i).value)) && (document.getElementById("link" + i).value)) {
             document.getElementById("link" + i).className = "invalidInput";
             invalidURL = true;
         }
     }
     if (invalidURL)
-		return;
+        return;
 
     //update the link array
     var linkArray = [document.getElementById("link1").value,
@@ -75,7 +74,9 @@ function onSubmit() {
                      document.getElementById("link4").value];
 
     // Store link array in chrome storage API.
-    chrome.storage.sync.set({"linkArray": linkArray}, function(){
+    chrome.storage.sync.set({
+        "linkArray": linkArray
+    }, function () {
         //removes the old notification bar and sets a new one
         var current = document.getElementById("notification");
         var newone = current.cloneNode(true); //copy current to new
@@ -83,18 +84,18 @@ function onSubmit() {
         newone.style.display = "block"; //activate animation of new
     });
 
-	// On click, keep save changes green.
-	document.getElementById("submit").className = "saved";
+    // On click, keep save changes green.
+    document.getElementById("submit").className = "saved";
 }
 
 function toggleDarkTheme() {
     // Change GUI theme.
-    chrome.storage.sync.get(["darkTheme"], function(items) {
+    chrome.storage.sync.get(["darkTheme"], function (items) {
         // Grab wrapper from HTML.
         var wrapper = document.getElementById("wrapper");
 
         // Toggle GUI colors.
-        if(items.darkTheme) {
+        if (items.darkTheme) {
             wrapper.style.backgroundColor = "#F5F5F5";
             document.body.style.backgroundColor = "#F5F5F5";
             wrapper.style.color = "#000000";
@@ -102,7 +103,7 @@ function toggleDarkTheme() {
             document.getElementById("link2").style.color = "#000000";
             document.getElementById("link3").style.color = "#000000";
             document.getElementById("link4").style.color = "#000000";
-            var icon = document.getElementById("icon").src="images/icon_48x48.png";
+            var icon = document.getElementById("icon").src = "images/icon_48x48.png";
         } else {
             wrapper.style.backgroundColor = "#333333";
             document.body.style.backgroundColor = "#333333";
@@ -111,16 +112,20 @@ function toggleDarkTheme() {
             document.getElementById("link2").style.color = "#FFFFFF";
             document.getElementById("link3").style.color = "#FFFFFF";
             document.getElementById("link4").style.color = "#FFFFFF";
-            var icon = document.getElementById("icon").src="images/icon_48x48_light.png";
+            var icon = document.getElementById("icon").src = "images/icon_48x48_light.png";
         }
 
         // Save new dark theme settings.
-        chrome.storage.sync.set({"darkTheme": !items.darkTheme}, function() {});
+        chrome.storage.sync.set({
+            "darkTheme": !items.darkTheme
+        }, function () {});
     });
 }
 
 function onStatusClick() {
-    chrome.tabs.create({url: "chrome://extensions/configureCommands"});
+    chrome.tabs.create({
+        url: "chrome://extensions/configureCommands"
+    });
 }
 
 function onMouseHover() {
@@ -151,13 +156,13 @@ function onMouseOut() {
     });
 }
 
-function onInputFocus(){
+function onInputFocus() {
     // resets style to default in case it was previously invalid
     this.className = "input";
 }
 
 function onType() {
-	document.getElementById("submit").className = "unsaved";
+    document.getElementById("submit").className = "unsaved";
 }
 
 // Load links.
