@@ -60,8 +60,6 @@
 
   "permissions": [
     "tabs",
-    "activeTab",
-    "storage",
-    "https://ajax.googleapis.com/"
+    "storage"
   ]
 }
