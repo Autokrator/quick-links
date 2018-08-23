@@ -2,60 +2,59 @@
   "manifest_version": 2,
 
   "name": "Quick Links",
-  "description": "This extension allows users to create keyboard shortcuts of
-                  their favorite websites from an easy-to-use UI.",
-  "version": "1.3",
+  "description": "This extension allows users to create keyboard shortcuts of their favorite websites from an easy-to-use UI.",
+  "version": "1.4",
 
   "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
+    "scripts": ["background.js"],
+    "persistent": false
+  },
 
   "commands": {
     "link1": {
       "suggested_key": {
-				"default": "Alt+1",
-				"mac": "Alt+1"
-			},
+        "default": "Alt+1",
+        "mac": "Alt+1"
+      },
       "description": "Hotkey 1 (opens link 1 in new tab)"
     },
 
-      "link2": {
-        "suggested_key": {
-  				"default": "Alt+2",
-  				"mac": "Alt+2"
-  			},
-        "description": "Hotkey 2 (opens link 2 in new tab)"
+    "link2": {
+      "suggested_key": {
+        "default": "Alt+2",
+        "mac": "Alt+2"
       },
-
-      "link3": {
-        "suggested_key": {
-  				"default": "Alt+3",
-  				"mac": "Alt+3"
-  			},
-        "description": "Hotkey 3 (opens link 3 in new tab)"
-      },
-
-      "link4": {
-        "suggested_key": {
-          "default": "Alt+4",
-          "mac": "Alt+4"
-        },
-        "description": "Hotkey 4 (opens link 4 in new tab)"
-      }
+      "description": "Hotkey 2 (opens link 2 in new tab)"
     },
+
+    "link3": {
+      "suggested_key": {
+        "default": "Alt+3",
+        "mac": "Alt+3"
+      },
+      "description": "Hotkey 3 (opens link 3 in new tab)"
+    },
+
+    "link4": {
+      "suggested_key": {
+        "default": "Alt+4",
+        "mac": "Alt+4"
+      },
+      "description": "Hotkey 4 (opens link 4 in new tab)"
+    }
+  },
 
   "browser_action": {
     "default_title": "Quick Links",
 
     "default_popup": "popup.html",
     "default_background": "background.html"
-	},
+  },
 
   "icons": {
-  "16": "images/icon_16x16.png",
-  "48": "images/icon_48x48.png",
-  "128": "images/icon_128x128.png"
+    "16": "images/icon_16x16.png",
+    "48": "images/icon_48x48.png",
+    "128": "images/icon_128x128.png"
   },
 
   "permissions": [
